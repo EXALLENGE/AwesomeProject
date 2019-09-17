@@ -6,7 +6,7 @@ import { Container } from "../components/Container";
 export default () => (
   <Container>
     <View>
-      <Text>hello world</Text>
+      <Text>hello</Text>
     </View>
   </Container>
 );
