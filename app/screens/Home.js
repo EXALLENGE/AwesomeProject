@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, KeyboardAvoidingView } from "react-native";
 
 import { Container } from "../components/Container";
 import { Logo } from "../components/Logo";
@@ -40,30 +40,32 @@ export default class Home extends Component {
     return (
       <Container>
         <Header onPress={this.handleOptionsPress} />
-        <Logo />
-        <InputWithButton
-          buttonText={TEMP_BASE_CURRENCY}
-          onPress={this.handlePressBaseCurrency}
-          defaultValue={TEMP_BASE_PRICE}
-          keyboardType="numeric"
-          onChangeText={this.handleTextChange}
-        />
-        <InputWithButton
-          buttonText={TEMP_QUOTE_CURRENCY}
-          onPress={this.handlePressQuoteCurrency}
-          editable={false}
-          value={TEMP_QUOTE_PRICE}
-        />
-        <LastConverted
-          base={TEMP_BASE_CURRENCY}
-          quote={TEMP_QUOTE_CURRENCY}
-          date={TEMP_CONVERSION_DATE}
-          conversionRate={TEMP_CONVERSION_RATE}
-        />
-        <ClearButton
-          text="Reverse Currencies"
-          onPress={this.handleSwapCurrency}
-        />
+        <KeyboardAvoidingView behavior="padding">
+          <Logo />
+          <InputWithButton
+            buttonText={TEMP_BASE_CURRENCY}
+            onPress={this.handlePressBaseCurrency}
+            defaultValue={TEMP_BASE_PRICE}
+            keyboardType="numeric"
+            onChangeText={this.handleTextChange}
+          />
+          <InputWithButton
+            buttonText={TEMP_QUOTE_CURRENCY}
+            onPress={this.handlePressQuoteCurrency}
+            editable={false}
+            value={TEMP_QUOTE_PRICE}
+          />
+          <LastConverted
+            base={TEMP_BASE_CURRENCY}
+            quote={TEMP_QUOTE_CURRENCY}
+            date={TEMP_CONVERSION_DATE}
+            conversionRate={TEMP_CONVERSION_RATE}
+          />
+          <ClearButton
+            text="Reverse Currencies"
+            onPress={this.handleSwapCurrency}
+          />
+        </KeyboardAvoidingView>
       </Container>
     );
   }
