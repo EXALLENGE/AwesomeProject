@@ -46,30 +46,30 @@ class Logo extends Component {
 
   keyboardWillShow = () => {
     const { containerImageWidth, imageWidth } = this.state;
-    Animated.parallel([
-      Animated.timing(containerImageWidth, {
-        toValue: styles.$smallContainerSize,
-        duration: ANIMATION_DURATION
-      }),
-      Animated.timing(imageWidth, {
-        toValue: styles.$smallImageSize,
-        duration: ANIMATION_DURATION
-      })
-    ]).start();
+    // Animated.parallel([
+    //   Animated.timing(containerImageWidth, {
+    //     toValue: styles.$smallContainerSize,
+    //     duration: ANIMATION_DURATION
+    //   }),
+    //   Animated.timing(imageWidth, {
+    //     toValue: styles.$smallImageSize,
+    //     duration: ANIMATION_DURATION
+    //   })
+    // ]).start();
   };
 
   keyboardWillHide = () => {
     const { containerImageWidth, imageWidth } = this.state;
-    Animated.parallel([
-      Animated.timing(containerImageWidth, {
-        toValue: styles.$largeContainerSize,
-        duration: ANIMATION_DURATION
-      }),
-      Animated.timing(imageWidth, {
-        toValue: styles.$largeImageSize,
-        duration: ANIMATION_DURATION
-      })
-    ]).start();
+    // Animated.parallel([
+    //   Animated.timing(containerImageWidth, {
+    //     toValue: styles.$largeContainerSize,
+    //     duration: ANIMATION_DURATION,
+    //   }),
+    //   Animated.timing(imageWidth, {
+    //     toValue: styles.$largeImageSize,
+    //     duration: ANIMATION_DURATION
+    //   })
+    // ]).start();
   };
 
   render() {
